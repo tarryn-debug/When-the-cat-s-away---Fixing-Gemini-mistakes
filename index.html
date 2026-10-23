@@ -303,7 +303,7 @@
     .pin-georgia    { top: 30.1%; left: 59.0%; }
     .pin-syria      { top: 34.7%; left: 58.1%; }
     .pin-yemen      { top: 47.3%; left: 61.1%; }
-    .pin-indiachina { top: 33.8%; left: 69.9%; }
+    .pin-indiachina { top: 35.2%; left: 69.8%; }
     .pin-southchina { top: 47.3%; left: 80.9%; }
 
     /* ========================================================= */
@@ -471,6 +471,10 @@
     .spotlight-view-container.layout-left .spotlight-stack {
       display: block;
       padding-left: 0;
+      /* A leftover transform (or its 0.3s transition) from another layer would make the stack the
+         containing block for the card and circle, so the wedge got measured against the wrong box */
+      transform: none !important;
+      transition: none;
     }
 
     .spotlight-view-container.layout-left .dialog-card {
